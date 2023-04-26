@@ -39,10 +39,19 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
    2. Alınan dizinin bir kopyasını döndür
 */
 
+  function kopyala(orijinalTatlar){
+    const result = [];
+    for( let i = 0 ; i<orijinalTatlar.length;i++){
+      result [i] = orijinalTatlar[i];
+    }
+    console.log(result);
+    return result;
+  }
 
-function kopyala(/*kod buraya*/){
-  /*kod buraya*/
-}
+
+
+
+
 
 
 /* Görev 2:
@@ -56,9 +65,14 @@ Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları ka
 */
 
 
-function dizi25Cesitmi(/*kod buraya*/){
-  /*kod buraya*/
+function dizi25Cesitmi(orijinalTatlar){
+  if(orijinalTatlar.length == 25){
+    return true;
+  }else{
+    return false;
+  }
 }
+console.log(dizi25Cesitmi(orijinalTatlar));
 
 
 /* Görev 3:
@@ -74,9 +88,13 @@ Aşağıdakileri yapmak için cesitEkle işlevini kullanın:
 */
 
 
-function cesitEkle(/*kod buraya*/){
-  /*kod buraya*/
+function cesitEkle(dizi,tatlı){
+ dizi.unshift(tatlı);
+ return dizi
 }
+
+
+
 
 
 /* Cörev 4:
@@ -92,8 +110,9 @@ Aşağıdakileri yapmak için sonCesitiKaldir işlevini kullanın:
 */
 
 
-function sonCesitiKaldir(/*kod buraya*/){
-  /*kod buraya*/
+function sonCesitiKaldir(dizi){
+  dizi.pop();
+  return dizi
 }
 
 
@@ -108,9 +127,10 @@ Aşağıdakileri yapmak için aşağıdaki indekstekiCesitiGetir işlevini kulla
    Örneğin: indekstekiCesitiGetir(orijinalTatlar, 2) çalıştırılmasıyla, Kakule'in başarıyla eklendiği varsayarsak sonuç "Ceviz" olucaktır.
 */
 
-function indekstekiCesitiGetir(/*kod buraya*/){
-  /*kod buraya*/
+function indekstekiCesitiGetir(tatlar,sayi){
+  return orijinalTatlar[sayi]
 }
+console.log(indekstekiCesitiGetir(orijinalTatlar,2))
 
 
 /* Görev 6:
@@ -128,8 +148,10 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
 
-function ismeGoreCesitCikar(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreCesitCikar(tatlar,lezzetAdi){
+  let i =tatlar.indexOf(lezzetAdi)
+  tatlar.splice(i,1)
+  return tatlar
 }
 
 
@@ -154,9 +176,16 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
 */
 
 
-function ismeGoreFiltrele(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreFiltrele(tatlar,filtreAdi){
+  let yeniDizi=[]
+  for(let i = 0 ; i<tatlar.length;i++){
+    if(tatlar[i].includes(filtreAdi)){
+      yeniDizi.push(tatlar[i])
+    }
+  }
+  return yeniDizi
 }
+console.log(ismeGoreFiltrele(orijinalTatlar, "Çikolata"))
 
 
 
@@ -251,4 +280,3 @@ module.exports = {
   ortalamaKelimeSayisi,
   rastgeleTatlar
 }
-
